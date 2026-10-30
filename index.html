@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Thunder Strikers Cricket Club — sample cricket club website with players, fixtures, results, points table, gallery and contact information."
+    />
+    <title>Thunder Strikers Cricket Club</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a href="#home" class="brand" aria-label="Thunder Strikers Cricket Club home">
+          <span class="brand-mark">TS</span>
+          <span>
+            <strong>Thunder Strikers</strong>
+            <small>Cricket Club</small>
+          </span>
+        </a>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#players">Players</a>
+          <a href="#fixtures">Fixtures</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <a class="nav-cta" href="#contact">Join Us</a>
+      </div>
+    </header>
+
+    <main id="home">
+      <section class="hero section">
+        <div class="container hero-layout">
+          <div class="hero-copy">
+            <p class="eyebrow">Premium Club Cricket Experience</p>
+            <h1>Thunder Strikers Cricket Club</h1>
+            <p class="lead">
+              Built for fearless training, disciplined performance and community pride.
+              This sample club page is ready for updates and easy to publish from your phone.
+            </p>
+            <div class="hero-actions">
+              <a class="primary-btn" href="#players">Explore Squad</a>
+              <a class="secondary-btn" href="#fixtures">View Fixtures</a>
+            </div>
+            <div class="hero-metrics" aria-label="Club highlights">
+              <div>
+                <strong>12</strong>
+                <span>Sample Players</span>
+              </div>
+              <div>
+                <strong>8</strong>
+                <span>Scheduled Matches</span>
+              </div>
+              <div>
+                <strong>4</strong>
+                <span>Practice Days</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual" aria-hidden="true">
+            <div class="badge-card">
+              <span>Club 2026</span>
+              <strong>Sample Season</strong>
+            </div>
+            <div class="stadium-graphic">
+              <div class="pitch"></div>
+              <div class="ball"></div>
+              <div class="bat"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section about" id="about">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">About the Club</p>
+            <h2>Performance, unity and pride</h2>
+          </div>
+
+          <div class="about-grid">
+            <div class="about-card">
+              <h3>Club Mission</h3>
+              <p>
+                Thunder Strikers Cricket Club develops confident cricketers through structured drills,
+                disciplined teamwork and a winning mindset across every format.
+              </p>
+            </div>
+            <div class="about-card">
+              <h3>Training Focus</h3>
+              <p>
+                Strength, fielding intensity and smart batting are at the centre of our weekly plans.
+                Sample training details can be updated easily without any technical setup.
+              </p>
+            </div>
+            <div class="about-card">
+              <h3>Community</h3>
+              <p>
+                We welcome players, families and supporters who want a polished, approachable club brand.
+                This demo uses clearly labelled sample data for easy editing and publishing.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section players" id="players">
+        <div class="container">
+          <div class="section-head header-row">
+            <div>
+              <p class="eyebrow">Squad</p>
+              <h2>Player profiles</h2>
+            </div>
+            <button class="mini-btn" id="resetPlayersBtn" type="button">Reset sample data</button>
+          </div>
+
+          <div class="player-toolbar">
+            <label class="search-box" aria-label="Search players">
+              <span>Search</span>
+              <input id="playerSearch" type="search" placeholder="Search by player name" />
+            </label>
+
+            <label class="filter-box" aria-label="Filter by role">
+              <span>Role</span>
+              <select id="roleFilter">
+                <option value="All">All roles</option>
+                <option value="Batter">Batter</option>
+                <option value="Bowler">Bowler</option>
+                <option value="All-rounder">All-rounder</option>
+                <option value="Wicket Keeper">Wicket Keeper</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="player-grid" id="playerGrid" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section class="section fixtures" id="fixtures">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Schedule</p>
+            <h2>Fixtures & results</h2>
+          </div>
+
+          <div class="tab-panel" aria-label="Match tabs">
+            <div class="tab-buttons" role="tablist" aria-label="Fixtures and results tabs">
+              <button class="tab-btn is-active" type="button" role="tab" aria-selected="true" data-tab="fixturesTab">
+                Fixtures
+              </button>
+              <button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab="resultsTab">
+                Results
+              </button>
+            </div>
+
+            <div class="tab-content is-active" id="fixturesTab" role="tabpanel">
+              <div class="match-list" id="fixturesList"></div>
+            </div>
+
+            <div class="tab-content" id="resultsTab" role="tabpanel" hidden>
+              <div class="match-list" id="resultsList"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section table-wrap" id="standings">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Standings</p>
+            <h2>Points table</h2>
+          </div>
+
+          <div class="table-shell">
+            <table aria-label="Points table">
+              <thead>
+                <tr>
+                  <th><button class="sort-btn" type="button" data-key="position">Pos</button></th>
+                  <th>Team</th>
+                  <th><button class="sort-btn" type="button" data-key="played">P</button></th>
+                  <th><button class="sort-btn" type="button" data-key="won">W</button></th>
+                  <th><button class="sort-btn" type="button" data-key="lost">L</button></th>
+                  <th><button class="sort-btn" type="button" data-key="nrr">NRR</button></th>
+                  <th><button class="sort-btn" type="button" data-key="points">Pts</button></th>
+                </tr>
+              </thead>
+              <tbody id="pointsTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="section gallery" id="gallery">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Moments</p>
+            <h2>Photo gallery</h2>
+          </div>
+
+          <div class="gallery-grid" id="galleryGrid"></div>
+        </div>
+      </section>
+
+      <section class="section contact" id="contact">
+        <div class="container contact-grid">
+          <div>
+            <p class="eyebrow">Get in touch</p>
+            <h2>Contact Thunder Strikers</h2>
+            <p>
+              This contact area is a sample setup. Update the phone number, email and WhatsApp message in
+              the website settings before publishing.
+            </p>
+            <ul class="contact-list">
+              <li><strong>Email:</strong> hello@thunderstrikersclub.example</li>
+              <li><strong>Phone:</strong> +91 98765 43210</li>
+              <li><strong>Location:</strong> Sample Cricket Ground, Hyderabad</li>
+            </ul>
+          </div>
+
+          <div class="contact-card">
+            <h3>Club enquiries</h3>
+            <a class="primary-btn whatsapp-link" id="whatsappButton" href="#" target="_blank" rel="noopener noreferrer">
+              Chat on WhatsApp
+            </a>
+            <a class="secondary-btn" href="tel:+919876543210">Call club</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p>© <span id="year"></span> Thunder Strikers Cricket Club</p>
+        <p>Sample club website demo for easy updates.</p>
+      </div>
+    </footer>
+
+    <div class="modal" id="playerModal" aria-hidden="true">
+      <div class="modal-backdrop" data-close="true"></div>
+      <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-header">
+          <h3 id="modalTitle">Edit player profile</h3>
+          <button class="close-btn" type="button" aria-label="Close editor" data-close="true">×</button>
+        </div>
+
+        <form id="playerForm">
+          <div class="form-grid">
+            <label>
+              <span>Player name</span>
+              <input type="text" name="name" required />
+            </label>
+
+            <label>
+              <span>Role</span>
+              <select name="role">
+                <option value="Batter">Batter</option>
+                <option value="Bowler">Bowler</option>
+                <option value="All-rounder">All-rounder</option>
+                <option value="Wicket Keeper">Wicket Keeper</option>
+              </select>
+            </label>
+
+            <label>
+              <span>Specialty</span>
+              <input type="text" name="specialty" placeholder="Power hitting / seam bowling" />
+            </label>
+
+            <label>
+              <span>Jersey</span>
+              <input type="text" name="jersey" placeholder="#07" />
+            </label>
+
+            <label>
+              <span>Batting</span>
+              <input type="text" name="batting" placeholder="Explosive top-order" />
+            </label>
+
+            <label>
+              <span>Bowling</span>
+              <input type="text" name="bowling" placeholder="Leg-spin / fast-medium" />
+            </label>
+
+            <label class="full-width">
+              <span>Status</span>
+              <input type="text" name="status" placeholder="Available for selection" />
+            </label>
+          </div>
+
+          <div class="modal-actions">
+            <button type="button" class="secondary-btn" data-close="true">Cancel</button>
+            <button type="submit" class="primary-btn">Save profile</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
